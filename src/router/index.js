@@ -8,9 +8,10 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/Redd_Lin/',
       name: 'index',
-      component: resolve => require(['../views/layout/Layout'], resolve)
+      component: () => import('@/views/layout/Layout')
+    //   component: App
     }
   ]
 })
