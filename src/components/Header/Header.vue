@@ -3,7 +3,7 @@
     <div class="navbar">
       <div class="title">Redd Lin</div>
       <div class="nav-item">
-        <a>intro</a>
+        <a @click="goToSomewhoere()">intro</a>
         <a>skill</a>
         <a>project</a>
       </div>
@@ -12,7 +12,11 @@
 </template>
 <script>
 export default {
-
+  methods: {
+    goToSomewhoere() {
+      this.$router.push('/Redd_Lin/second')
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
