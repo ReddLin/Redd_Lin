@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <header class="header">
     <div class="navbar">
       <div class="title">Redd Lin</div>
       <div class="nav-item">
@@ -8,7 +8,7 @@
         <a>project</a>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 <script>
 export default {
@@ -20,6 +20,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$color-white: #ffffff;
+$color-bg-dark: #2b2c2c;
+$color-header-dark: #303131;
 .header {
     background-image: linear-gradient(180deg, rgb(74, 178, 233), rgb(48, 141, 215));
     width: 100%;
@@ -28,7 +31,7 @@ export default {
     position: fixed;
     // min-width: 768px;
     .navbar {
-        color: #fff;
+        color: $color-white;
         height: 80px;
         line-height: 80px;
         display: flex;

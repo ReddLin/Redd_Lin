@@ -10,10 +10,16 @@ export const router = [
     path: '/Redd_Lin/',
     name: 'index',
     component: () => import('@/views/layout/Layout'),
+    meta: {
+      title: 'Redd Lin Profile'
+    },
     children: [
       {
         path: '/Redd_Lin/second',
         name: 'second',
+        meta: {
+          title: 'Second page'
+        },
         component: () => import('@/views/second/Second')
       }
     ]
