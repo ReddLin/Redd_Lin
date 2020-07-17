@@ -1,58 +1,99 @@
 <template>
-  <header class="header">
-    <div class="navbar">
-      <div class="title">Redd Lin</div>
-      <div class="nav-item">
-        <a @click="goToSomewhoere()">intro</a>
-        <a>skill</a>
-        <a>project</a>
-      </div>
+  <div class="header">
+    <div class="header-menu-flex">
+      <h1 class="header-logo">
+        <a @click="goToSomewhoere('')">Redd Lin</a>
+      </h1>
     </div>
-  </header>
+    <div class="header-options">
+      <ul class="header-menu-info">
+        <li><a>intro</a></li>
+        <li><a>project</a></li>
+        <li><a>skill</a></li>
+      </ul>
+    </div>
+  </div>
 </template>
 <script>
 export default {
   methods: {
-    goToSomewhoere() {
-      this.$router.push('/Redd_Lin/second')
+    goToSomewhoere(path) {
+      this.$router.push('/Redd_Lin/' + path)
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
-$color-white: #ffffff;
-$color-bg-dark: #2b2c2c;
-$color-header-dark: #303131;
+@import "@/scss/theme";
+
 .header {
-    background-image: linear-gradient(180deg, rgb(74, 178, 233), rgb(48, 141, 215));
+    background: $color-bg-dark;
     width: 100%;
     top: 0;
-    left: 0;
     position: fixed;
-    // min-width: 768px;
-    .navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 30px;
+    .header-menu-flex {
+      display: flex;
+      -moz-box-align: center;
+      justify-content: flex-start;
+      flex: 1;
+      .header-logo {
         color: $color-white;
-        height: 80px;
-        line-height: 80px;
-        display: flex;
-        justify-content: space-between;
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+      }
     }
-    .title {
+    .header-options {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+      -webkit-box-orient: horizontal;
+      .header-menu-info {
         display: flex;
-        justify-content: flex-start;
-        flex: 1;
-        margin: 0 20px;
-        font-size: 36px;
-    }
-    .nav-item {
-        display: flex;
-        justify-content: flex-end;
-        flex: 1;
-        font-size: 24px;
-        a {
-            margin: 0 15px;
+        list-style: none;
+        list-style-type: none;
+        li {
+          margin-left: 42px;
+          &:first-child {
+            margin-left: 0;
+          }
+          a {
+            position: relative;
+            height: 80px;
+            display: block;
+            line-height: 80px;
             cursor: pointer;
+            color: $color-white;
+            font-size: 20px;
+            transition: all 0.3s;
+            &:hover {
+              color: $color-header-menu;
+            }
+            &::before {
+              position: absolute;
+              content: ".";
+              bottom: 10px;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background: $color-header-menu;
+              -webkit-transition: all 0.3s;
+              transition: all 0.3s;
+            }
+            &:hover::before {
+              width: 30px;
+            }
+          }
         }
+      }
     }
 
 }
