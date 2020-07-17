@@ -18,6 +18,9 @@
         <span class="icon-bar two" />
         <span class="icon-bar three" />
       </button>
+      <div class="header-menu-mobile">
+
+      </div>
     </div>
   </div>
 </template>
@@ -155,11 +158,13 @@ export default {
         transform: rotate(-45deg) translateX(6px) translateY(-7px);
       }
     }
-
     @media only screen and (max-width: 650px) {
       .hamburger-icon {
         display: block;
       }
+    }
+    .header-menu-mobile {
+      display: none;
     }
   }
 }
