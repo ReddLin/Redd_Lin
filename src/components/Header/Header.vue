@@ -18,8 +18,14 @@
         <span class="icon-bar two" />
         <span class="icon-bar three" />
       </button>
-      <div class="header-menu-mobile">
-
+    </div>
+    <div :class="!mobile_list ? 'header-menu-mobile' : 'header-menu-mobile on'">
+      <div class="header-menu-mobile-info">
+        <ul>
+          <li><a @click="goToSomewhoere('second')">intro</a></li>
+          <li><a>project</a></li>
+          <li><a>skill</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -61,6 +67,8 @@ export default {
     margin: auto;
     height: 80px;
     display: flex;
+    z-index: 999;
+    background: $color-bg-dark;
     .header-menu-flex {
       display: flex;
       -moz-box-align: center;
@@ -98,12 +106,12 @@ export default {
             color: $color-white;
             font-size: 20px;
             transition: all 0.3s;
-            &:hover {
+            &:hover, &:active {
               color: $color-header-menu;
             }
             &::before {
               position: absolute;
-              content: ".";
+              content: "";
               bottom: 10px;
               left: 0;
               width: 0;
@@ -163,9 +171,52 @@ export default {
         display: block;
       }
     }
-    .header-menu-mobile {
-      display: none;
+  }
+  .header-menu-mobile {
+    // display: none;
+    position: fixed;
+    top: -80px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    transition: all 0.5s;
+    z-index: 900;
+    .header-menu-mobile-info {
+      ul {
+        list-style: none;
+        list-style-type: none;
+        a {
+          cursor: pointer;
+          color: $color-white;
+          display: block;
+          padding: 15px 0 15px 0;
+          font-size: 16px;
+          letter-spacing: 1px;
+          position: relative;
+          &:hover, &:active {
+            color: $color-header-menu;
+          }
+          &::before {
+            position: absolute;
+            content: "";
+            bottom: 10px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $color-header-menu;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+          }
+          &:hover::before {
+            width: 30px;
+          }
+        }
+      }
     }
+  }
+  .header-menu-mobile.on {
+    // display: block;
+    top: 80px;
   }
 }
 </style>
