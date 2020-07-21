@@ -8,9 +8,9 @@
       </div>
       <div class="header-options">
         <ul class="header-menu-info">
-          <li><a @click="goToSomewhoere('second')">intro</a></li>
-          <li><a>project</a></li>
-          <li><a>skill</a></li>
+          <li><a @click="goToSomewhoere('intro')">intro</a></li>
+          <li><a @click="goToSomewhoere('project')">project</a></li>
+          <li><a @click="goToSomewhoere('skill')">skill</a></li>
         </ul>
       </div>
       <button :class="!mobile_list ? 'hamburger-icon' : 'hamburger-icon on'" @click="triggerMobileList">
@@ -22,9 +22,9 @@
     <div :class="!mobile_list ? 'header-menu-mobile' : 'header-menu-mobile on'">
       <div class="header-menu-mobile-info">
         <ul>
-          <li><a @click="goToSomewhoere('second')">intro</a></li>
-          <li><a>project</a></li>
-          <li><a>skill</a></li>
+          <li><a @click="goToSomewhoere('intro')">intro</a></li>
+          <li><a @click="goToSomewhoere('project')">project</a></li>
+          <li><a @click="goToSomewhoere('skill')">skill</a></li>
         </ul>
       </div>
     </div>
@@ -173,7 +173,7 @@ export default {
     }
   }
   .header-menu-mobile {
-    // display: none;
+    display: none;
     position: fixed;
     top: -80px;
     width: 100%;
@@ -212,6 +212,11 @@ export default {
           }
         }
       }
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    .header-menu-mobile {
+      display: block;
     }
   }
   .header-menu-mobile.on {

@@ -15,12 +15,28 @@ export const router = [
     },
     children: [
       {
-        path: '/Redd_Lin/second',
-        name: 'second',
+        path: '/Redd_Lin/intro',
+        name: 'intro',
         meta: {
-          title: 'Second page'
+          title: 'Intro'
         },
-        component: () => import('@/views/second/Second')
+        component: () => import('@/views/intro/Intro')
+      },
+      {
+        path: '/Redd_Lin/project',
+        name: 'project',
+        meta: {
+          title: 'Project'
+        },
+        component: () => import('@/views/project/Project')
+      },
+      {
+        path: '/Redd_Lin/skill',
+        name: 'skill',
+        meta: {
+          title: 'Skill'
+        },
+        component: () => import('@/views/skill/Skill')
       }
     ]
   }
