@@ -14,7 +14,7 @@
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('project')">project</a> -->
-            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">prokect</router-link>
+            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">project</router-link>
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
@@ -37,7 +37,7 @@
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('project')">project</a> -->
-            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">prokect</router-link>
+            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">project</router-link>
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
