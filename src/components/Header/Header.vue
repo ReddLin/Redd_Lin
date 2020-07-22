@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div :class="scrolled ? 'header scrolled' : 'header'">
     <div class="header-container">
       <div class="header-menu-flex">
         <h1 class="header-logo">
@@ -34,8 +34,15 @@
 export default {
   data() {
     return {
-      mobile_list: false
+      mobile_list: false,
+      scrolled: false
     }
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     goToSomewhoere(path) {
@@ -43,6 +50,9 @@ export default {
     },
     triggerMobileList() {
       this.mobile_list = !this.mobile_list
+    },
+    handleScroll() {
+      this.scrolled = window.scrollY > 0
     }
   }
 }
@@ -60,11 +70,11 @@ export default {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 30px;
   .header-container {
     max-width: 1200px;
     width: 100%;
     margin: auto;
+    padding: 0 30px;
     height: 80px;
     display: flex;
     z-index: 999;
@@ -175,9 +185,9 @@ export default {
   .header-menu-mobile {
     display: none;
     position: fixed;
-    top: -80px;
+    top: -100px;
     width: 100%;
-    background: transparent;
+    background: $color-bg-dark;
     border: none;
     transition: all 0.5s;
     z-index: 900;
@@ -222,6 +232,12 @@ export default {
   .header-menu-mobile.on {
     // display: block;
     top: 80px;
+  }
+}
+.header.scrolled {
+  .header-container {
+    background: $color-header-scrolled-dark;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
   }
 }
 </style>

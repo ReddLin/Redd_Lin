@@ -1,9 +1,12 @@
 <template>
   <div class="intro">
     <div class="first-block">
-      <img class="self-img" src="https://images.cakeresume.com/s9016030303/48c17451-b8d8-4bef-b619-25acfdf35cfa.png" alt="">
       <div class="self-intro">
-        Redd Lin
+        <h2>{{ $t('__chineseName') }} ({{ $t('__englishName') }})</h2>
+        <h3>{{ $t('__topIntro') }}</h3>
+      </div>
+      <div class="self-img">
+        <img src="@/assets/img/self-pic.jpg" alt="">
       </div>
     </div>
   </div>
@@ -16,22 +19,31 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/theme";
 .intro {
-  margin: auto 30px;
   color: $color-white;
   .first-block {
     display: flex;
+    padding: 0 30px;
     .self-img {
-      width: 50%;
-      max-width: 100%;
+      flex: 1;
       height: auto;
-      // display: flex;
       text-align: center;
-      // flex: 1;
-      border-radius: 50%;
+      img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
     }
     .self-intro {
-      // display: flex;
       flex: 1;
+      text-align: left;
+      h3 {
+        letter-spacing: 5px;
+      }
+    }
+  }
+  @media only screen and (max-width: 650px) {
+    .first-block {
+      flex-direction: column;
     }
   }
 }
