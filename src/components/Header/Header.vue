@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     goToSomewhoere(path) {
-      this.$router.push('/Redd_Lin/' + path)
+      this.$router.push('/Redd_Lin/' + path).catch(() => {})
     },
     triggerMobileList() {
       this.mobile_list = !this.mobile_list
