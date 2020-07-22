@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 export const router = [
   {
     path: '/Redd_Lin/',
+    redirect: '/Redd_Lin/intro',
     name: 'index',
     component: () => import('@/views/layout/Layout'),
     meta: {
