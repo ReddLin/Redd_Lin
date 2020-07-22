@@ -8,9 +8,18 @@
       </div>
       <div class="header-options">
         <ul class="header-menu-info">
-          <li><a @click="goToSomewhoere('intro')">intro</a></li>
-          <li><a @click="goToSomewhoere('project')">project</a></li>
-          <li><a @click="goToSomewhoere('skill')">skill</a></li>
+          <li>
+            <!-- <a @click="goToSomewhoere('intro')">intro</a> -->
+            <router-link :to="{path: '/Redd_Lin/intro'}" active-class="active">intro</router-link>
+          </li>
+          <li>
+            <!-- <a @click="goToSomewhoere('project')">project</a> -->
+            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">prokect</router-link>
+          </li>
+          <li>
+            <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
+            <router-link :to="{path: '/Redd_Lin/skill'}" active-class="active">skill</router-link>
+          </li>
         </ul>
       </div>
       <button :class="!mobile_list ? 'hamburger-icon' : 'hamburger-icon on'" @click="triggerMobileList">
@@ -22,9 +31,18 @@
     <div :class="!mobile_list ? 'header-menu-mobile' : 'header-menu-mobile on'">
       <div class="header-menu-mobile-info">
         <ul>
-          <li><a @click="goToSomewhoere('intro')">intro</a></li>
-          <li><a @click="goToSomewhoere('project')">project</a></li>
-          <li><a @click="goToSomewhoere('skill')">skill</a></li>
+          <li>
+            <!-- <a @click="goToSomewhoere('intro')">intro</a> -->
+            <router-link :to="{path: '/Redd_Lin/intro'}" active-class="active">intro</router-link>
+          </li>
+          <li>
+            <!-- <a @click="goToSomewhoere('project')">project</a> -->
+            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">prokect</router-link>
+          </li>
+          <li>
+            <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
+            <router-link :to="{path: '/Redd_Lin/skill'}" active-class="active">skill</router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -116,7 +134,8 @@ export default {
             color: $color-white;
             font-size: 20px;
             transition: all 0.3s;
-            &:hover, &:active {
+            text-decoration: none;
+            &:hover, &:active, &.active {
               color: $color-header-menu;
             }
             &::before {
@@ -130,7 +149,7 @@ export default {
               -webkit-transition: all 0.3s;
               transition: all 0.3s;
             }
-            &:hover::before {
+            &:hover::before, &.active::before {
               width: 30px;
             }
           }
@@ -203,7 +222,8 @@ export default {
           font-size: 16px;
           letter-spacing: 1px;
           position: relative;
-          &:hover, &:active {
+          text-decoration: none;
+          &:hover, &:active, &.active {
             color: $color-header-menu;
           }
           &::before {
@@ -217,7 +237,7 @@ export default {
             -webkit-transition: all 0.3s;
             transition: all 0.3s;
           }
-          &:hover::before {
+          &:hover::before, &.active::before {
             width: 30px;
           }
         }

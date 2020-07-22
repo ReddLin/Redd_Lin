@@ -2,7 +2,7 @@
   <div class="intro">
     <div class="first-block">
       <div class="self-intro">
-        <h2>{{ $t('__chineseName') }} ({{ $t('__englishName') }})</h2>
+        <h1>{{ $t('__chineseName') }} ({{ $t('__englishName') }})</h1>
         <h3>{{ $t('__topIntro') }}</h3>
       </div>
       <div class="self-img">
@@ -23,21 +23,26 @@ export default {
   .first-block {
     display: flex;
     padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
     .self-img {
       flex: 1;
       height: auto;
       text-align: center;
       img {
         width: 100%;
-        max-height: 400px;
         object-fit: cover;
       }
     }
     .self-intro {
       flex: 1;
       text-align: left;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       h3 {
         letter-spacing: 5px;
+        color: $color-intro-h3;
       }
     }
   }
