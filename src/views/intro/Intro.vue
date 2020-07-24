@@ -27,6 +27,20 @@
           {{ $t('__phone') }}
           <a :href="'tel:' + phone" class="intro-phone">+886-930-941-228</a>
         </p>
+        <br>
+        <h3 class="follow-me">{{ $t('__followMe') }}</h3>
+        <a :href="facebook_url" target="_blank">
+          <i class="icofont-facebook icofont-1x" />
+        </a>
+        <a :href="github_url" target="_blank">
+          <i class="icofont-github icofont-1x" />
+        </a>
+        <a :href="linkedin_url" target="_blank">
+          <i class="icofont-linkedin icofont-1x" />
+        </a>
+        <a :href="instagram_url" target="_blank">
+          <i class="icofont-instagram icofont-1x" />
+        </a>
       </div>
     </div>
   </div>
@@ -36,13 +50,18 @@ export default {
   data() {
     return {
       mail: 's9016030303@gmail.com',
-      phone: '0930941228'
+      phone: '0930941228',
+      facebook_url: 'https://www.facebook.com/ken.q.lin?ref=bookmarks',
+      github_url: 'https://github.com/ReddLin?tab=repositories',
+      linkedin_url: 'https://www.linkedin.com/in/redd-lin-9009aa152/',
+      instagram_url: 'https://www.instagram.com/redd_lin0330/'
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import "@/scss/theme";
+
 .intro {
   color: $color-white;
   .first-block {
@@ -106,7 +125,30 @@ export default {
           transition: .5s all;
         }
       }
+      .follow-me {
+        margin-bottom: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: $color-intro-follow-me-icon;
+        i {
+          font-size: 1.2em;
+        }
+        &:first-child {
+          margin-left:0;
+        }
+        & + a {
+          margin-left: 15px;
+        }
+        &:hover {
+          color: $color-header-menu;
+          transition: all .5s;
+        }
+      }
     }
   }
 }
+</style>
+<style>
+@import '~@/assets/icon/icofont.min.css';
 </style>

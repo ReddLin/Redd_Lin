@@ -13,12 +13,12 @@
             <router-link :to="{path: '/Redd_Lin/intro'}" active-class="active">intro</router-link>
           </li>
           <li>
-            <!-- <a @click="goToSomewhoere('project')">project</a> -->
-            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">project</router-link>
-          </li>
-          <li>
             <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
             <router-link :to="{path: '/Redd_Lin/skill'}" active-class="active">skill</router-link>
+          </li>
+          <li>
+            <!-- <a @click="goToSomewhoere('project')">project</a> -->
+            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">project</router-link>
           </li>
         </ul>
       </div>
@@ -36,12 +36,12 @@
             <router-link :to="{path: '/Redd_Lin/intro'}" active-class="active">intro</router-link>
           </li>
           <li>
-            <!-- <a @click="goToSomewhoere('project')">project</a> -->
-            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">project</router-link>
-          </li>
-          <li>
             <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
             <router-link :to="{path: '/Redd_Lin/skill'}" active-class="active">skill</router-link>
+          </li>
+          <li>
+            <!-- <a @click="goToSomewhoere('project')">project</a> -->
+            <router-link :to="{path: '/Redd_Lin/project'}" active-class="active">project</router-link>
           </li>
         </ul>
       </div>

@@ -10,5 +10,8 @@ export default {
   __educationTitle: '中原大學資訊工程學系碩士 畢',
   __address: 'New Taipei City，TW',
   __mail: 'Mail：',
-  __phone: 'Phone：'
+  __phone: 'Phone：',
+  __followMe: 'Follow Me',
+  // footer
+  __copyright: 'Copyright © 2020'
 }
