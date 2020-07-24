@@ -12,6 +12,7 @@ export default {
   __mail: 'Mail：',
   __phone: 'Phone：',
   __followMe: 'Follow Me',
+  __skill: 'Skill',
   // footer
   __copyright: 'Copyright © 2020'
 }
