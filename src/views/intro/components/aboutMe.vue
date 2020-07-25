@@ -2,7 +2,7 @@
   <div>
     <p>{{ $t('__jobName') }}</p>
     <br>
-    <h3>{{ $t('__education') }}</h3>
+    <h2>{{ $t('__education') }}</h2>
     <p class="education-content">  {{ $t('__educationTime') }}</p>
     <p class="education-content">  {{ $t('__educationTitle') }}</p>
     <br>
@@ -35,7 +35,9 @@ export default {
   max-width: 900px;
   text-align: left;
   padding: 0 30px;
-  p, h3 {
+  margin: 0 auto;
+  p{
+    font-size: 18px;
     margin: 0;
   }
   .education-content {

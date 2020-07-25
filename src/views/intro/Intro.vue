@@ -13,22 +13,47 @@
       <h1>{{ $t('__aboutMe') }}</h1>
       <div class="aboutMe-content">
         <AboutMe />
-        <h3 class="follow-me">{{ $t('__followMe') }}</h3>
+        <h2 class="follow-me">{{ $t('__followMe') }}</h2>
         <FollowMe />
       </div>
     </div>
     <div class="third-block">
       <h1>{{ $t('__skill') }}</h1>
+      <div class="skill-content">
+        <SkillCard
+          v-for="(card, c_index) in cards"
+          :key="'card_' + c_index"
+          :title="card.title"
+          :skill-list="card.list"
+        />
+      </div>
     </div>
   </div>
 </template>
 <script>
 import FollowMe from '@/views/intro/components/followMe'
 import AboutMe from '@/views/intro/components/aboutMe'
+import SkillCard from '@/views/intro/components/skillCard'
+
 export default {
   components: {
     FollowMe,
-    AboutMe
+    AboutMe,
+    SkillCard
+  },
+  data() {
+    return {
+      cards: [{
+        'title': 'Front-end',
+        'list': ['Jquery', 'Bootstrap', 'CSS(SCSS)', 'AngularJs', 'Vue']
+      }, {
+        'title': 'Back-end',
+        'list': ['JAVA', 'PlayFramework', 'MySQL', 'nodeJs', 'mongoDB']
+      }, {
+        'title': 'Tools',
+        'list': ['BitBucket', 'SVN', 'Webpack', 'websocket', 'sourcetree']
+      }]
+    }
   }
 }
 </script>
@@ -70,7 +95,7 @@ export default {
   }
   .second-block {
     width: 100%;
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     background: $color-intro-second-block-bg;
@@ -79,46 +104,54 @@ export default {
       line-height: 150px;
       margin: 0;
       display: initial;
-      position: relative;
-      &::before {
-        position: absolute;
-        content: "";
-        bottom: -10px;
-        left: 0;
-        right: 0;
-        width: 70px;
-        height: 3px;
-        background: $color-header-menu;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        margin: 0 auto;
-      }
+      // position: relative;
+      // &::before {
+      //   position: absolute;
+      //   content: "";
+      //   bottom: -10px;
+      //   left: 0;
+      //   right: 0;
+      //   width: 70px;
+      //   height: 3px;
+      //   background: $color-header-menu;
+      //   -webkit-transition: all 0.3s;
+      //   transition: all 0.3s;
+      //   margin: 0 auto;
+      // }
     }
   }
   .third-block {
     width: 100%;
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    background: $color-intro-second-block-bg;
-    padding-bottom: 20px;
+    background: $color-intro-third-block-bg;
+    padding-bottom: 40px;
     h1 {
       line-height: 150px;
       margin: 0;
       display: initial;
-      position: relative;
-      &::before {
-        position: absolute;
-        content: "";
-        bottom: -10px;
-        left: 0;
-        right: 0;
-        width: 40px;
-        height: 3px;
-        background: $color-header-menu;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        margin: 0 auto;
+      // position: relative;
+      // &::before {
+      //   position: absolute;
+      //   content: "";
+      //   bottom: -10px;
+      //   left: 0;
+      //   right: 0;
+      //   width: 40px;
+      //   height: 3px;
+      //   background: $color-header-menu;
+      //   -webkit-transition: all 0.3s;
+      //   transition: all 0.3s;
+      //   margin: 0 auto;
+      // }
+    }
+    .skill-content {
+      display: flex;
+    }
+    @media only screen and (max-width: 650px) {
+      .skill-content {
+        flex-direction: column;
       }
     }
   }

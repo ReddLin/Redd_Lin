@@ -39,7 +39,7 @@ a {
   text-decoration: none;
   color: $color-intro-follow-me-icon;
   i {
-    font-size: 1.2em;
+    font-size: 1.3em !important;
   }
   &:first-child {
     margin-left:0;
