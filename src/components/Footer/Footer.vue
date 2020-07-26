@@ -18,6 +18,8 @@ export default {
   width: 100%;
   color: $color-footer-copyright;
   text-align: center;
+  position: fixed;
+  bottom: 0;
   p {
     font-weight: bold;
     span {
