@@ -2,7 +2,7 @@
   <div class="progress-block">
     <vue-circle
       :progress="percent"
-      :size="100"
+      :size="90"
       :reverse="false"
       line-cap="round"
       :fill="fill"
@@ -54,10 +54,19 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "@/scss/theme";
+
 p {
   margin: 0;
+  transition: all .5s;
 }
 .progress-block {
   display: inline-flex;
+  margin: 5px;
+  &:hover {
+    p {
+      color: $color-header-menu;
+    }
+  }
 }
 </style>

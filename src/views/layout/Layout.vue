@@ -20,4 +20,7 @@ export default {
 body {
   background: $color-bg-dark;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 </style>

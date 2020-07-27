@@ -24,12 +24,12 @@ export const router = [
         component: () => import('@/views/intro/Intro')
       },
       {
-        path: '/Redd_Lin/project',
-        name: 'project',
+        path: '/Redd_Lin/experience',
+        name: 'experience',
         meta: {
-          title: 'Project'
+          title: 'Experience'
         },
-        component: () => import('@/views/project/Project')
+        component: () => import('@/views/experience/Experience')
       },
       {
         path: '/Redd_Lin/skill',

@@ -114,6 +114,11 @@ export default {
       flex: 1;
       margin: 15px;
       border-top: $color-intro-h3 2px solid;
+      display: flex;
+      flex-wrap: wrap;
+      h2 {
+        width: 100%;
+      }
     }
   }
   @media only screen and (max-width: 650px) {
