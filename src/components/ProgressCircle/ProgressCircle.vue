@@ -33,15 +33,15 @@ export default {
     percent: {
       type: Number,
       default: 0
-    },
-    fill: {
-      type: Object,
-      default: null
     }
   },
   data() {
     return {
+      fill: {}
     }
+  },
+  beforeMount() {
+    this.check_circle_color()
   },
   methods: {
     progress(event, progress, stepValue) {
@@ -49,6 +49,15 @@ export default {
     },
     progress_end(event) {
       // console.log('Circle progress end')
+    },
+    check_circle_color() {
+      if (this.percent >= 90) {
+        this.fill = { color: '#28a745' }
+      } else if (this.percent >= 75 && this.percent < 90) {
+        this.fill = { color: '#007bff' }
+      } else if (this.percent >= 60 && this.percent < 75) {
+        this.fill = { color: '#ffc107' }
+      }
     }
   }
 }
