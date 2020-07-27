@@ -5,7 +5,7 @@
         <h1>{{ $t('__chineseName') }} ({{ $t('__englishName') }})</h1>
         <h3>{{ $t('__topIntro') }}</h3>
       </div>
-      <div class="self-img">
+      <div class="self-img fadeInRight">
         <img src="@/assets/img/self-pic.jpg" alt="">
       </div>
     </div>
@@ -71,6 +71,8 @@ export default {
       flex: 1;
       height: auto;
       text-align: center;
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
       img {
         width: 100%;
         object-fit: cover;
@@ -104,20 +106,20 @@ export default {
       line-height: 150px;
       margin: 0;
       display: initial;
-      // position: relative;
-      // &::before {
-      //   position: absolute;
-      //   content: "";
-      //   bottom: -10px;
-      //   left: 0;
-      //   right: 0;
-      //   width: 70px;
-      //   height: 3px;
-      //   background: $color-header-menu;
-      //   -webkit-transition: all 0.3s;
-      //   transition: all 0.3s;
-      //   margin: 0 auto;
-      // }
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        width: 70px;
+        height: 3px;
+        background: $color-header-menu;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        margin: 0 auto;
+      }
     }
   }
   .third-block {
@@ -131,20 +133,20 @@ export default {
       line-height: 150px;
       margin: 0;
       display: initial;
-      // position: relative;
-      // &::before {
-      //   position: absolute;
-      //   content: "";
-      //   bottom: -10px;
-      //   left: 0;
-      //   right: 0;
-      //   width: 40px;
-      //   height: 3px;
-      //   background: $color-header-menu;
-      //   -webkit-transition: all 0.3s;
-      //   transition: all 0.3s;
-      //   margin: 0 auto;
-      // }
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        width: 40px;
+        height: 3px;
+        background: $color-header-menu;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        margin: 0 auto;
+      }
     }
     .skill-content {
       display: flex;
@@ -155,6 +157,32 @@ export default {
       }
     }
   }
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
 }
 </style>
 

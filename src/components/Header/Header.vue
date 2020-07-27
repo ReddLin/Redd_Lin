@@ -88,6 +88,7 @@ export default {
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  z-index: 1;
   .header-container {
     max-width: 1200px;
     width: 100%;
