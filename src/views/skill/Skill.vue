@@ -125,6 +125,9 @@ export default {
     .skill-content {
       flex-direction: column;
       text-align: center;
+      .skill-card {
+        display: block;
+      }
     }
   }
 }
