@@ -112,7 +112,7 @@ export default {
     }
     .header-options {
       display: flex;
-      flex: 1;
+      flex: 2;
       align-items: center;
       justify-content: flex-start;
       flex-direction: row-reverse;

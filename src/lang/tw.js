@@ -14,5 +14,21 @@ export default {
   __followMe: 'Follow Me',
   __skill: 'Skill',
   // footer
-  __copyright: 'Copyright © 2020'
+  __copyright: 'Copyright © 2020',
+  // work experience
+  __workExperience: 'Work Experience',
+  __experience: '經歷',
+  __one: '一',
+  __two: '二',
+  __three: '三',
+  __solartech: '恆星網路科技有限公司',
+  __year: '年',
+  __month: '月',
+  __frontEndSr: '資深工程師',
+  __jobTitle: '前端技術主任, 管理職',
+  __smzb: '山貓直播',
+  __smzbContent1: '以中國市場為主的體育直播平台，在疫情影響賽事期間，多引進電競賽事增加使用者更多元選擇',
+  __smzbContent2: '以lavavel php為後端，加上vue js為前端的開發架構',
+  __smzbContent3: 'RWD響應式開發，但因為功能需求不同所以區分成大/小網頁',
+  __siteLink: '網站連結'
 }
