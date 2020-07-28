@@ -30,5 +30,12 @@ export default {
   __smzbContent1: '以中國市場為主的體育直播平台，在疫情影響賽事期間，多引進電競賽事增加使用者更多元選擇',
   __smzbContent2: '以lavavel php為後端，加上vue js為前端的開發架構',
   __smzbContent3: 'RWD響應式開發，但因為功能需求不同所以區分成大/小網頁',
-  __siteLink: '網站連結'
+  __siteLink: '網站連結',
+  __clientSite: '客戶站',
+  __clientContent1: '以山貓直播為主模板，根據客戶方的需求，將山貓直播(增/刪/修改)',
+  __clientContent2: '並依照客戶方所提供的視覺，更改客戶站整體style',
+  __navSite: '導流站',
+  __navContent1: '依照山貓的商業模式，會創造許多網址來當作主站的導流媒介，將這些導流站的網址散播出去，再利用回源功能將使用者導回山貓',
+  __navContent2: '依舊以山貓為主模板，只保留直播間以及賽程表頁面的基本功能',
+  __navContent3: '也會依照導流站的內容，更改整體的style'
 }

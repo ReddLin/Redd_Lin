@@ -151,7 +151,7 @@ export default {
               transition: all 0.3s;
             }
             &:hover::before, &.active::before {
-              width: 30px;
+              width: 80%;
             }
           }
         }

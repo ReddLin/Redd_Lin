@@ -20,6 +20,7 @@ export default {
   text-align: center;
   position: fixed;
   bottom: 0;
+  z-index: 2;
   p {
     font-weight: bold;
     span {

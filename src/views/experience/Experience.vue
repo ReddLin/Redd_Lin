@@ -2,29 +2,63 @@
   <div class="experience">
     <h1>{{ $t('__workExperience') }}</h1>
     <div class="ex-contents">
-      <h2>{{ $t('__experience') }}{{ $t('__three') }} {{ $t('__solartech') }}</h2>
-      <h2>2019 {{ $t('__year') }} 3 {{ $t('__month') }} - 2020 {{ $t('__year') }} 7 {{ $t('__month') }}</h2>
-      <h3>{{ $t('__frontEndSr') }}({{ $t('__jobTitle') }})</h3>
-      <div class="duty-contents">
-        <div class="border-block" />
-        <div class="work-project">
-          <h3>{{ $t('__smzb') }}</h3>
-          <ul>
-            <li>{{ $t('__smzbContent1') }}</li>
-            <li>{{ $t('__smzbContent2') }}</li>
-            <li>{{ $t('__smzbContent3') }}</li>
-            <li>
-              <a href="//smzb.cn" target="_blank">{{ $t('__siteLink') }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Company
+        v-for="(company, c_index) in companyList"
+        :key="'company_' + c_index"
+        :company-name="company.companyName"
+        :during-time="company.duringTime"
+        :title="company.title"
+        :projects="company.projects"
+      />
     </div>
   </div>
 </template>
 <script>
+import Company from '@/views/experience/components/company'
 export default {
-
+  components: {
+    Company
+  },
+  data() {
+    return {
+      companyList: [{
+        companyName: this.$t('__experience') + this.$t('__three') + ' ' + this.$t('__solartech'),
+        duringTime: '2019 ' + this.$t('__year') + ' 3 ' + this.$t('__month') + ' - 2020 ' + this.$t('__year') + ' 7 ' + this.$t('__month'),
+        title: this.$t('__frontEndSr') + '(' + this.$t('__jobTitle') + ')',
+        projects: [{
+          name: this.$t('__smzb'),
+          desp: [this.$t('__smzbContent1'), this.$t('__smzbContent2'), this.$t('__smzbContent3')],
+          site_url: '//smzb.cn'
+        }, {
+          name: this.$t('__clientSite'),
+          desp: [this.$t('__clientContent1'), this.$t('__clientContent2')],
+          site_url: '//kl99.tv'
+        }, {
+          name: this.$t('__navSite'),
+          desp: [this.$t('__navContent1'), this.$t('__navContent2'), this.$t('__navContent3')],
+          site_url: '//ggzb.io'
+        }]
+      },
+      {
+        companyName: this.$t('__experience') + this.$t('__two') + ' ' + this.$t('__solartech'),
+        duringTime: '2019 ' + this.$t('__year') + ' 3 ' + this.$t('__month') + ' - 2020 ' + this.$t('__year') + ' 7 ' + this.$t('__month'),
+        title: this.$t('__frontEndSr') + '(' + this.$t('__jobTitle') + ')',
+        projects: [{
+          name: this.$t('__smzb'),
+          desp: [this.$t('__smzbContent1'), this.$t('__smzbContent2'), this.$t('__smzbContent3')],
+          site_url: '//smzb.cn'
+        }, {
+          name: this.$t('__clientSite'),
+          desp: [this.$t('__clientContent1'), this.$t('__clientContent2')],
+          site_url: '//kl99.tv'
+        }, {
+          name: this.$t('__navSite'),
+          desp: [this.$t('__navContent1'), this.$t('__navContent2'), this.$t('__navContent3')],
+          site_url: '//ggzb.io'
+        }]
+      }]
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -39,47 +73,7 @@ export default {
   .ex-contents {
     max-width: 900px;
     margin: 0 auto;
-    h2 {
-      text-align: left;
-    }
-    .duty-contents {
-      display: flex;
-      position: relative;
-      .border-block {
-        flex: 1;
-        position: static;
-        &::before {
-          content: ' ';
-          width: 9px;
-          height: 9px;
-          border-radius: 50%;
-          position: absolute;
-          display: inline-block;
-          background-color: #a8a8a8;
-          margin-top: 10px;
-          margin-left: .5px;
-          z-index: 1;
-        }
-        &::after {
-          content: '';
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          background-color: #979797;
-          display: block;
-          margin-left: 4.5px;
-          top: 10px;
-          z-index: 0;
-        }
-      }
-      .work-project {
-        flex: 9;
-        h3 {
-          color: $color-header-menu;
-          margin-top: 0;
-        }
-      }
-    }
+    padding-bottom: 50px;
   }
 }
 </style>

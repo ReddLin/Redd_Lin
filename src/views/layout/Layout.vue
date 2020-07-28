@@ -23,4 +23,7 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+* {
+  letter-spacing: 1px;
+}
 </style>
