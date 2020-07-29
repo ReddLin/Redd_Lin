@@ -17,67 +17,36 @@
 </template>
 <script>
 import ProgressCircle from '@/components/ProgressCircle/ProgressCircle'
+import { mapActions } from 'vuex'
+
 export default {
   components: {
     ProgressCircle
   },
   data() {
     return {
-      cards: [{
-        'title': 'Front-end',
-        'list': [{
-          'name': 'Jquery',
-          'percent': 90
-        }, {
-          'name': 'Bootstrap',
-          'percent': 85
-        }, {
-          'name': 'CSS(SCSS)',
-          'percent': 80
-        }, {
-          'name': 'AngularJs',
-          'percent': 60
-        }, {
-          'name': 'Vue',
-          'percent': 90
-        }]
-      }, {
-        'title': 'Back-end',
-        'list': [{
-          'name': 'JAVA',
-          'percent': 70
-        }, {
-          'name': 'PlayFramework',
-          'percent': 70
-        }, {
-          'name': 'MySQL',
-          'percent': 75
-        }, {
-          'name': 'nodeJs',
-          'percent': 70
-        }, {
-          'name': 'mongoDB',
-          'percent': 65
-        }]
-      }, {
-        'title': 'Tools',
-        'list': [{
-          'name': 'BitBucket',
-          'percent': 70
-        }, {
-          'name': 'SVN',
-          'percent': 70
-        }, {
-          'name': 'Webpack',
-          'percent': 70
-        }, {
-          'name': 'websocket',
-          'percent': 80
-        }, {
-          'name': 'sourcetree',
-          'percent': 80
-        }]
-      }]
+      cards: []
+    }
+  },
+  computed: {
+  },
+  mounted() {
+    this.getSkillCards()
+  },
+  methods: {
+    ...mapActions('skillCards', ['GetCards']),
+    getSkillCards() {
+      this.GetCards()
+        .then(res => {
+          // console.log(res)
+          if (res.data.code === 0) {
+            this.cards = res.data.result
+          }
+        })
+        .catch(err => {
+          // console.log(err)
+          this.response = err
+        })
     }
   }
 }
