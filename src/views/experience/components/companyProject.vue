@@ -7,7 +7,7 @@
         <li v-for="(desp, d_index) in project.desp" :key="'desp_' + d_index">
           {{ desp }}
         </li>
-        <li>
+        <li v-show="project.site_url">
           <a :href="project.site_url" target="_blank">{{ $t('__siteLink') }}</a>
         </li>
       </ul>

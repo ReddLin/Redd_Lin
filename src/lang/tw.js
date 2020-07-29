@@ -37,5 +37,13 @@ export default {
   __navSite: '導流站',
   __navContent1: '依照山貓的商業模式，會創造許多網址來當作主站的導流媒介，將這些導流站的網址散播出去，再利用回源功能將使用者導回山貓',
   __navContent2: '依舊以山貓為主模板，只保留直播間以及賽程表頁面的基本功能',
-  __navContent3: '也會依照導流站的內容，更改整體的style'
+  __navContent3: '也會依照導流站的內容，更改整體的style',
+  __dlink: 'D-Link友訊科技股份有限公司',
+  __nuclias: 'Nuclias Connect - 網路管理系統',
+  __nuContent1: '建立一系統管理Acess Point以及Client的連線，針對連線方式、使用者進行管理，並利用管理介面查看系統運作情形',
+  __nuContent2: '以nodeJs為server端，前端套AngularJs，mongoDB為資料庫所建立網頁端架構',
+  __nuContent3: '跨部門合作開發中央管理機制',
+  __dnh100: 'DNH-100',
+  __dnhContent1: '將Nuclias Connect建立到Rock64的板子上，類似Nuclias Connect的縮小版(管理數量較少)',
+  __dnhContent2: '開發以linux系統為基準的Shared Object讓在板子上的Nuclias Connect、CLI可以更改linux的設定(包括LAN、Date/Time...等)'
 }

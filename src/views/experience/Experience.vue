@@ -40,21 +40,17 @@ export default {
         }]
       },
       {
-        companyName: this.$t('__experience') + this.$t('__two') + ' ' + this.$t('__solartech'),
-        duringTime: '2019 ' + this.$t('__year') + ' 3 ' + this.$t('__month') + ' - 2020 ' + this.$t('__year') + ' 7 ' + this.$t('__month'),
-        title: this.$t('__frontEndSr') + '(' + this.$t('__jobTitle') + ')',
+        companyName: this.$t('__experience') + this.$t('__two') + ' ' + this.$t('__dlink'),
+        duringTime: '2018 ' + this.$t('__year') + ' 7 ' + this.$t('__month') + ' - 2019 ' + this.$t('__year') + ' 3 ' + this.$t('__month'),
+        title: this.$t('__frontEndSr'),
         projects: [{
-          name: this.$t('__smzb'),
-          desp: [this.$t('__smzbContent1'), this.$t('__smzbContent2'), this.$t('__smzbContent3')],
-          site_url: '//smzb.cn'
+          name: this.$t('__nuclias'),
+          desp: [this.$t('__nuContent1'), this.$t('__nuContent2'), this.$t('__nuContent3')],
+          site_url: ''
         }, {
-          name: this.$t('__clientSite'),
-          desp: [this.$t('__clientContent1'), this.$t('__clientContent2')],
-          site_url: '//kl99.tv'
-        }, {
-          name: this.$t('__navSite'),
-          desp: [this.$t('__navContent1'), this.$t('__navContent2'), this.$t('__navContent3')],
-          site_url: '//ggzb.io'
+          name: this.$t('__dnh100'),
+          desp: [this.$t('__dnhContent1'), this.$t('__dnhContent2')],
+          site_url: ''
         }]
       }]
     }
