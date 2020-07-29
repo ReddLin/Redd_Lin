@@ -52,6 +52,36 @@ export default {
           desp: [this.$t('__dnhContent1'), this.$t('__dnhContent2')],
           site_url: ''
         }]
+      },
+      {
+        companyName: this.$t('__experience') + this.$t('__one') + ' ' + this.$t('__walkgame'),
+        duringTime: '2014 ' + this.$t('__year') + ' 12 ' + this.$t('__month') + ' - 2018 ' + this.$t('__year') + ' 6 ' + this.$t('__month'),
+        title: this.$t('__softEngineer'),
+        projects: [{
+          name: this.$t('__camerabay'),
+          desp: [this.$t('__caContent1'), this.$t('__caContent2'), this.$t('__caContent3')],
+          site_url: '//www.camerabay.tv/'
+        }, {
+          name: this.$t('__camerabaySports'),
+          desp: [this.$t('__caSportContent1')],
+          site_url: '//sports.camerabay.tv/'
+        }, {
+          name: this.$t('__databank'),
+          desp: [this.$t('__dbContent1'), this.$t('__dbContent2'), this.$t('__dbContent3')],
+          site_url: ''
+        }, {
+          name: this.$t('__streetFight'),
+          desp: [this.$t('__stContent1')],
+          site_url: '//www.camerabay.tv/event/cbsuperleague'
+        }, {
+          name: this.$t('__qwalk'),
+          desp: [this.$t('__qwalkContent1'), this.$t('__qwalkContent2')],
+          site_url: '//www.camerabay.tv/'
+        }, {
+          name: this.$t('__coco'),
+          desp: [this.$t('__cocoContent1'), this.$t('__cocoContent2'), this.$t('__cocoContent3')],
+          video_url: '//vimeo.com/245745543'
+        }]
       }]
     }
   }

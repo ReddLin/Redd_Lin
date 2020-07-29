@@ -10,6 +10,9 @@
         <li v-show="project.site_url">
           <a :href="project.site_url" target="_blank">{{ $t('__siteLink') }}</a>
         </li>
+        <li v-show="project.video_url">
+          <a :href="project.video_url" target="_blank">{{ $t('__cocoVideo') }}</a>
+        </li>
       </ul>
     </div>
   </div>
