@@ -25,7 +25,61 @@ export default {
   },
   data() {
     return {
-      cards: []
+      cards: [{
+        'title': 'Front-end',
+        'list': [{
+          'name': 'Jquery',
+          'percent': 90
+        }, {
+          'name': 'Bootstrap',
+          'percent': 85
+        }, {
+          'name': 'CSS(SCSS)',
+          'percent': 80
+        }, {
+          'name': 'AngularJs',
+          'percent': 60
+        }, {
+          'name': 'Vue',
+          'percent': 90
+        }]
+      }, {
+        'title': 'Back-end',
+        'list': [{
+          'name': 'JAVA',
+          'percent': 70
+        }, {
+          'name': 'PlayFramework',
+          'percent': 70
+        }, {
+          'name': 'MySQL',
+          'percent': 75
+        }, {
+          'name': 'nodeJs',
+          'percent': 70
+        }, {
+          'name': 'mongoDB',
+          'percent': 65
+        }]
+      }, {
+        'title': 'Tools',
+        'list': [{
+          'name': 'BitBucket',
+          'percent': 70
+        }, {
+          'name': 'SVN',
+          'percent': 70
+        }, {
+          'name': 'Webpack',
+          'percent': 70
+        }, {
+          'name': 'websocket',
+          'percent': 80
+        }, {
+          'name': 'sourcetree',
+          'percent': 80
+        }]
+      }]
     }
   },
   computed: {
