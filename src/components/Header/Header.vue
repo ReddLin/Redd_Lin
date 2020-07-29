@@ -90,7 +90,7 @@ export default {
   box-sizing: border-box;
   z-index: 2;
   .header-container {
-    max-width: 1200px;
+    // max-width: 1200px;
     width: 100%;
     margin: auto;
     padding: 0 30px;
@@ -218,7 +218,7 @@ export default {
         a {
           cursor: pointer;
           color: $color-white;
-          display: block;
+          display: inline-block;
           padding: 15px 0 15px 0;
           font-size: 16px;
           letter-spacing: 1px;
@@ -239,7 +239,7 @@ export default {
             transition: all 0.3s;
           }
           &:hover::before, &.active::before {
-            width: 30px;
+            width: 80%;
           }
         }
       }
