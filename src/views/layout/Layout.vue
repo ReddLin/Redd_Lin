@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header />
-    <router-view style="margin-top: 100px;" />
+    <transition name="fade" mode="out-in">
+      <router-view style="margin-top: 100px;" />
+    </transition>
     <Footer />
   </div>
 </template>
@@ -25,5 +27,11 @@ body::-webkit-scrollbar {
 }
 * {
   letter-spacing: 1px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
