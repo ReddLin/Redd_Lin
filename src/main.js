@@ -3,6 +3,11 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import i18n from './lang/i18n'
+import animated from 'animate.css'
+import { ObserveVisibility } from 'vue-observe-visibility'
+
+Vue.use(animated)
+Vue.directive('observe-visibility', ObserveVisibility)
 
 Vue.config.productionTip = false
 

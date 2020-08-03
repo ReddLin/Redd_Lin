@@ -1,5 +1,5 @@
 <template>
-  <div class="skill-card">
+  <div :class="classKey + ' skill-card'">
     <h2>{{ title }}</h2>
     <p v-for="(skill, s_index) in skillList" :key="'skill_' + s_index">{{ skill }}</p>
   </div>
@@ -14,6 +14,18 @@ export default {
     skillList: {
       type: Array,
       default: null
+    },
+    classKey: {
+      type: String,
+      default: ''
+    }
+  },
+  mounted() {
+    const element = document.getElementsByClassName('skill-card')
+    if (element.length > 1) {
+      for (const ele of element) {
+        ele.classList.add('animate__animated', 'animate__fadeInLeft')
+      }
     }
   }
 }
@@ -36,5 +48,14 @@ export default {
     margin: 5px;
     font-size: 18px;
   }
+}
+.card_0 {
+  animation-delay: 0.3s
+}
+.card_1 {
+  animation-delay: 0.4s
+}
+.card_2 {
+  animation-delay: 0.5s
 }
 </style>

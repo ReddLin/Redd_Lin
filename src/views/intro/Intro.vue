@@ -17,7 +17,7 @@
         <FollowMe />
       </div>
     </div>
-    <div class="third-block">
+    <div v-observe-visibility="visibilityChanged" class="third-block">
       <h1>{{ $t('__skill') }}</h1>
       <div class="skill-content">
         <SkillCard
@@ -25,6 +25,7 @@
           :key="'card_' + c_index"
           :title="card.title"
           :skill-list="card.list"
+          :class-key="'card_' + c_index"
         />
       </div>
     </div>
@@ -53,6 +54,12 @@ export default {
         'title': 'Tools',
         'list': ['BitBucket', 'SVN', 'Webpack', 'websocket', 'sourcetree']
       }]
+    }
+  },
+  methods: {
+    visibilityChanged(isVisible, entry) {
+      console.log(isVisible)
+      console.log(entry)
     }
   }
 }
@@ -150,6 +157,8 @@ export default {
     }
     .skill-content {
       display: flex;
+      max-width: 900px;
+      margin: 0 auto;
     }
     @media only screen and (max-width: 650px) {
       .skill-content {
