@@ -5,6 +5,9 @@
       <Company
         v-for="(company, c_index) in companyList"
         :key="'company_' + c_index"
+        ref="company"
+        v-observe-visibility="{callback: (isVisible, entry) => visibilityChanged(isVisible, entry, c_index), once: true}"
+        :index="c_index"
         :company-name="company.companyName"
         :during-time="company.duringTime"
         :title="company.title"
@@ -83,6 +86,16 @@ export default {
           video_url: '//vimeo.com/245745543'
         }]
       }]
+    }
+  },
+  methods: {
+    visibilityChanged(isVisible, entry, c_index) {
+      if (isVisible) {
+        // for (const proj of this.$refs.companyProject) {
+        //   proj.addAnimate()
+        // }
+        this.$refs.company[c_index].addAnimate()
+      }
     }
   }
 }

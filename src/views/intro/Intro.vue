@@ -23,6 +23,7 @@
         <SkillCard
           v-for="(card, c_index) in cards"
           :key="'card_' + c_index"
+          ref="skillCard"
           :title="card.title"
           :skill-list="card.list"
           :class-key="'card_' + c_index"
@@ -58,8 +59,17 @@ export default {
   },
   methods: {
     visibilityChanged(isVisible, entry) {
-      console.log(isVisible)
-      console.log(entry)
+      // console.log(isVisible)
+      // console.log(entry)
+      if (isVisible) {
+        for (const card of this.$refs.skillCard) {
+          card.addAnimate()
+        }
+      } else {
+        // for (const card of this.$refs.skillCard) {
+        //   card.removeAnimate()
+        // }
+      }
     }
   }
 }
@@ -135,7 +145,7 @@ export default {
     margin: 0 auto;
     text-align: center;
     background: $color-intro-third-block-bg;
-    padding-bottom: 40px;
+    padding-bottom: 54px;
     h1 {
       line-height: 150px;
       margin: 0;

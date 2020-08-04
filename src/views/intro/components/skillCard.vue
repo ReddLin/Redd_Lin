@@ -21,10 +21,26 @@ export default {
     }
   },
   mounted() {
-    const element = document.getElementsByClassName('skill-card')
-    if (element.length > 1) {
-      for (const ele of element) {
-        ele.classList.add('animate__animated', 'animate__fadeInLeft')
+  },
+  methods: {
+    addAnimate() {
+      const element = document.getElementsByClassName('skill-card')
+      if (element.length > 1) {
+        for (const ele of element) {
+          if (window.innerWidth >= 650) {
+            ele.classList.add('animate__animated', 'animate__fadeInUp')
+          } else {
+            ele.classList.add('animate__animated', 'animate__fadeInLeft')
+          }
+        }
+      }
+    },
+    removeAnimate() {
+      const element = document.getElementsByClassName('skill-card')
+      if (element.length > 1) {
+        for (const ele of element) {
+          ele.classList.remove('animate__animated', 'animate__fadeInUp', 'animate__fadeInLeft')
+        }
       }
     }
   }
