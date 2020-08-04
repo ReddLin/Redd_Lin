@@ -17,7 +17,7 @@
         <FollowMe />
       </div>
     </div>
-    <div v-observe-visibility="visibilityChanged" class="third-block">
+    <div v-observe-visibility="{callback: visibilityChanged, once: true}" class="third-block">
       <h1>{{ $t('__skill') }}</h1>
       <div class="skill-content">
         <SkillCard
