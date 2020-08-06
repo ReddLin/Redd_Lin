@@ -7,8 +7,8 @@ Vue.use(VueRouter)
 
 export const router = [
   {
-    path: '/Redd_Lin/',
-    redirect: '/Redd_Lin/intro',
+    path: '/',
+    redirect: '/intro',
     name: 'index',
     component: () => import('@/views/layout/Layout'),
     meta: {
@@ -16,7 +16,7 @@ export const router = [
     },
     children: [
       {
-        path: '/Redd_Lin/intro',
+        path: '/intro',
         name: 'intro',
         meta: {
           title: 'Intro'
@@ -24,7 +24,7 @@ export const router = [
         component: () => import('@/views/intro/Intro')
       },
       {
-        path: '/Redd_Lin/experience',
+        path: '/experience',
         name: 'experience',
         meta: {
           title: 'Experience'
@@ -32,7 +32,7 @@ export const router = [
         component: () => import('@/views/experience/Experience')
       },
       {
-        path: '/Redd_Lin/skill',
+        path: '/skill',
         name: 'skill',
         meta: {
           title: 'Skill'
@@ -44,7 +44,8 @@ export const router = [
 ]
 
 export default new VueRouter({
-  mode: 'history', // require service support
+  mode: 'hash', // require service support
+  base: '/Redd_Lin',
   scrollBehavior: () => ({ y: 0 }),
   routes: router
 })

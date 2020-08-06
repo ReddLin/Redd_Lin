@@ -3,22 +3,22 @@
     <div class="header-container">
       <div class="header-menu-flex">
         <h1 class="header-logo">
-          <a @click="goToSomewhoere('')">Redd Lin</a>
+          <a @click="goToSomewhoere('intro')">Redd Lin</a>
         </h1>
       </div>
       <div class="header-options">
         <ul class="header-menu-info">
           <li>
             <!-- <a @click="goToSomewhoere('intro')">intro</a> -->
-            <router-link :to="{path: '/Redd_Lin/intro'}" active-class="active">intro</router-link>
+            <router-link :to="{path: '/intro'}" active-class="active">intro</router-link>
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
-            <router-link :to="{path: '/Redd_Lin/skill'}" active-class="active">skill</router-link>
+            <router-link :to="{path: '/skill'}" active-class="active">skill</router-link>
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('project')">project</a> -->
-            <router-link :to="{path: '/Redd_Lin/experience'}" active-class="active">work experience</router-link>
+            <router-link :to="{path: '/experience'}" active-class="active">work experience</router-link>
           </li>
         </ul>
       </div>
@@ -33,15 +33,15 @@
         <ul>
           <li>
             <!-- <a @click="goToSomewhoere('intro')">intro</a> -->
-            <router-link :to="{path: '/Redd_Lin/intro'}" active-class="active" @click.native="triggerMobileList">intro</router-link>
+            <router-link :to="{path: '/intro'}" active-class="active" @click.native="triggerMobileList">intro</router-link>
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('skill')">skill</a> -->
-            <router-link :to="{path: '/Redd_Lin/skill'}" active-class="active" @click.native="triggerMobileList">skill</router-link>
+            <router-link :to="{path: '/skill'}" active-class="active" @click.native="triggerMobileList">skill</router-link>
           </li>
           <li>
             <!-- <a @click="goToSomewhoere('project')">project</a> -->
-            <router-link :to="{path: '/Redd_Lin/experience'}" active-class="active" @click.native="triggerMobileList">work experience</router-link>
+            <router-link :to="{path: '/experience'}" active-class="active" @click.native="triggerMobileList">work experience</router-link>
           </li>
         </ul>
       </div>
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     goToSomewhoere(path) {
-      this.$router.push('/Redd_Lin/' + path).catch(() => {})
+      this.$router.push(path).catch(() => {})
     },
     triggerMobileList() {
       this.mobile_list = !this.mobile_list
