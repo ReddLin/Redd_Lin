@@ -22,6 +22,59 @@
 
       gtag('config', 'UA-58268024-4');
     </script>
+    <script src='https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js'></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCe-ItqskppfpCvx_Fgyk2iHJDp6bvmHos",
+        authDomain: "redd-lin.firebaseapp.com",
+        databaseURL: "https://redd-lin.firebaseio.com",
+        projectId: "redd-lin",
+        storageBucket: "redd-lin.appspot.com",
+        messagingSenderId: "72815885356",
+        appId: "1:72815885356:web:46424423650744a9286589",
+        measurementId: "G-KCD80FWZNT"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      if (firebase.messaging.isSupported()) {
+        const messaging = firebase.messaging();
+        messaging.requestPermission()
+          .then(res => {
+            // 若允許通知 -> 向 firebase 拿 token
+            return messaging.getToken();
+          }, err => {
+            // 若拒絕通知
+            console.log('refuse');
+            console.log(err);  
+          })
+          .then(token => {
+            // 成功取得 token
+            // postToken(token); // 打給後端 api
+            console.log(token);
+          })
+
+          // messaging.onMessage((payload) => {
+          //   console.log('Message received. ', payload);
+          //   // ...
+          // })
+        let enableForegroundNotification = true;
+        messaging.onMessage(function(payload) {
+            console.log("Message received. ", payload);
+            
+            if(enableForegroundNotification) {
+                const {title, ...options} = JSON.parse(payload.data.notification);
+                navigator.serviceWorker.getRegistrations().then(registration => {
+                    registration[0].showNotification(title, options);
+                });
+            }
+        });
+      }
+
+      
+      
+    </script>
 
   </body>
 </html>
